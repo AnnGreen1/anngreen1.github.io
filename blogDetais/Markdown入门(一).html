@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>#Markdown&#x5165;&#x95E8;(&#x4E00;)</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet"
+    href="file:///c:\Users\Ann\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.6.1\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+
+
+
+
+
+
+
+
+
+  <style>
+    /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+    code[class*="language-"],
+    pre[class*="language-"] {
+      color: #333;
+      background: none;
+      font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+      text-align: left;
+      white-space: pre;
+      word-spacing: normal;
+      word-break: normal;
+      word-wrap: normal;
+      line-height: 1.4;
+
+      -moz-tab-size: 8;
+      -o-tab-size: 8;
+      tab-size: 8;
+
+      -webkit-hyphens: none;
+      -moz-hyphens: none;
+      -ms-hyphens: none;
+      hyphens: none;
+    }
+
+    /* Code blocks */
+    pre[class*="language-"] {
+      padding: .8em;
+      overflow: auto;
+      /* border: 1px solid #ddd; */
+      border-radius: 3px;
+      /* background: #fff; */
+      background: #f5f5f5;
+    }
+
+    /* Inline code */
+    :not(pre)>code[class*="language-"] {
+      padding: .1em;
+      border-radius: .3em;
+      white-space: normal;
+      background: #f5f5f5;
+    }
+
+    .token.comment,
+    .token.blockquote {
+      color: #969896;
+    }
+
+    .token.cdata {
+      color: #183691;
+    }
+
+    .token.doctype,
+    .token.punctuation,
+    .token.variable,
+    .token.macro.property {
+      color: #333;
+    }
+
+    .token.operator,
+    .token.important,
+    .token.keyword,
+    .token.rule,
+    .token.builtin {
+      color: #a71d5d;
+    }
+
+    .token.string,
+    .token.url,
+    .token.regex,
+    .token.attr-value {
+      color: #183691;
+    }
+
+    .token.property,
+    .token.number,
+    .token.boolean,
+    .token.entity,
+    .token.atrule,
+    .token.constant,
+    .token.symbol,
+    .token.command,
+    .token.code {
+      color: #0086b3;
+    }
+
+    .token.tag,
+    .token.selector,
+    .token.prolog {
+      color: #63a35c;
+    }
+
+    .token.function,
+    .token.namespace,
+    .token.pseudo-element,
+    .token.class,
+    .token.class-name,
+    .token.pseudo-class,
+    .token.id,
+    .token.url-reference .token.variable,
+    .token.attr-name {
+      color: #795da3;
+    }
+
+    .token.entity {
+      cursor: help;
+    }
+
+    .token.title,
+    .token.title .token.punctuation {
+      font-weight: bold;
+      color: #1d3e81;
+    }
+
+    .token.list {
+      color: #ed6a43;
+    }
+
+    .token.inserted {
+      background-color: #eaffea;
+      color: #55a532;
+    }
+
+    .token.deleted {
+      background-color: #ffecec;
+      color: #bd2c00;
+    }
+
+    .token.bold {
+      font-weight: bold;
+    }
+
+    .token.italic {
+      font-style: italic;
+    }
+
+
+    /* JSON */
+    .language-json .token.property {
+      color: #183691;
+    }
+
+    .language-markup .token.tag .token.punctuation {
+      color: #333;
+    }
+
+    /* CSS */
+    code.language-css,
+    .language-css .token.function {
+      color: #0086b3;
+    }
+
+    /* YAML */
+    .language-yaml .token.atrule {
+      color: #63a35c;
+    }
+
+    code.language-yaml {
+      color: #183691;
+    }
+
+    /* Ruby */
+    .language-ruby .token.function {
+      color: #333;
+    }
+
+    /* Markdown */
+    .language-markdown .token.url {
+      color: #795da3;
+    }
+
+    /* Makefile */
+    .language-makefile .token.symbol {
+      color: #795da3;
+    }
+
+    .language-makefile .token.variable {
+      color: #183691;
+    }
+
+    .language-makefile .token.builtin {
+      color: #0086b3;
+    }
+
+    /* Bash */
+    .language-bash .token.keyword {
+      color: #0086b3;
+    }
+
+    /* highlight */
+    pre[data-line] {
+      position: relative;
+      padding: 1em 0 1em 3em;
+    }
+
+    pre[data-line] .line-highlight-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: transparent;
+      display: block;
+      width: 100%;
+    }
+
+    pre[data-line] .line-highlight {
+      position: absolute;
+      left: 0;
+      right: 0;
+      padding: inherit 0;
+      margin-top: 1em;
+      background: hsla(24, 20%, 50%, .08);
+      background: linear-gradient(to right, hsla(24, 20%, 50%, .1) 70%, hsla(24, 20%, 50%, 0));
+      pointer-events: none;
+      line-height: inherit;
+      white-space: pre;
+    }
+
+    pre[data-line] .line-highlight:before,
+    pre[data-line] .line-highlight[data-end]:after {
+      content: attr(data-start);
+      position: absolute;
+      top: .4em;
+      left: .6em;
+      min-width: 1em;
+      padding: 0 .5em;
+      background-color: hsla(24, 20%, 50%, .4);
+      color: hsl(24, 20%, 95%);
+      font: bold 65%/1.5 sans-serif;
+      text-align: center;
+      vertical-align: .3em;
+      border-radius: 999px;
+      text-shadow: none;
+      box-shadow: 0 1px white;
+    }
+
+    pre[data-line] .line-highlight[data-end]:after {
+      content: attr(data-end);
+      top: auto;
+      bottom: .4em;
+    }
+
+    html body {
+      font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+      background-color: #fff;
+      overflow: initial;
+      box-sizing: border-box;
+      word-wrap: break-word
+    }
+
+    html body>:first-child {
+      margin-top: 0
+    }
+
+    html body h1,
+    html body h2,
+    html body h3,
+    html body h4,
+    html body h5,
+    html body h6 {
+      line-height: 1.2;
+      margin-top: 1em;
+      margin-bottom: 16px;
+      color: #000
+    }
+
+    html body h1 {
+      font-size: 2.25em;
+      font-weight: 300;
+      padding-bottom: .3em
+    }
+
+    html body h2 {
+      font-size: 1.75em;
+      font-weight: 400;
+      padding-bottom: .3em
+    }
+
+    html body h3 {
+      font-size: 1.5em;
+      font-weight: 500
+    }
+
+    html body h4 {
+      font-size: 1.25em;
+      font-weight: 600
+    }
+
+    html body h5 {
+      font-size: 1.1em;
+      font-weight: 600
+    }
+
+    html body h6 {
+      font-size: 1em;
+      font-weight: 600
+    }
+
+    html body h1,
+    html body h2,
+    html body h3,
+    html body h4,
+    html body h5 {
+      font-weight: 600
+    }
+
+    html body h5 {
+      font-size: 1em
+    }
+
+    html body h6 {
+      color: #5c5c5c
+    }
+
+    html body strong {
+      color: #000
+    }
+
+    html body del {
+      color: #5c5c5c
+    }
+
+    html body a:not([href]) {
+      color: inherit;
+      text-decoration: none
+    }
+
+    html body a {
+      color: #08c;
+      text-decoration: none
+    }
+
+    html body a:hover {
+      color: #00a3f5;
+      text-decoration: none
+    }
+
+    html body img {
+      max-width: 100%
+    }
+
+    html body>p {
+      margin-top: 0;
+      margin-bottom: 16px;
+      word-wrap: break-word
+    }
+
+    html body>ul,
+    html body>ol {
+      margin-bottom: 16px
+    }
+
+    html body ul,
+    html body ol {
+      padding-left: 2em
+    }
+
+    html body ul.no-list,
+    html body ol.no-list {
+      padding: 0;
+      list-style-type: none
+    }
+
+    html body ul ul,
+    html body ul ol,
+    html body ol ol,
+    html body ol ul {
+      margin-top: 0;
+      margin-bottom: 0
+    }
+
+    html body li {
+      margin-bottom: 0
+    }
+
+    html body li.task-list-item {
+      list-style: none
+    }
+
+    html body li>p {
+      margin-top: 0;
+      margin-bottom: 0
+    }
+
+    html body .task-list-item-checkbox {
+      margin: 0 .2em .25em -1.8em;
+      vertical-align: middle
+    }
+
+    html body .task-list-item-checkbox:hover {
+      cursor: pointer
+    }
+
+    html body blockquote {
+      margin: 16px 0;
+      font-size: inherit;
+      padding: 0 15px;
+      color: #5c5c5c;
+      background-color: #f0f0f0;
+      border-left: 4px solid #d6d6d6
+    }
+
+    html body blockquote>:first-child {
+      margin-top: 0
+    }
+
+    html body blockquote>:last-child {
+      margin-bottom: 0
+    }
+
+    html body hr {
+      height: 4px;
+      margin: 32px 0;
+      background-color: #d6d6d6;
+      border: 0 none
+    }
+
+    html body table {
+      margin: 10px 0 15px 0;
+      border-collapse: collapse;
+      border-spacing: 0;
+      display: block;
+      width: 100%;
+      overflow: auto;
+      word-break: normal;
+      word-break: keep-all
+    }
+
+    html body table th {
+      font-weight: bold;
+      color: #000
+    }
+
+    html body table td,
+    html body table th {
+      border: 1px solid #d6d6d6;
+      padding: 6px 13px
+    }
+
+    html body dl {
+      padding: 0
+    }
+
+    html body dl dt {
+      padding: 0;
+      margin-top: 16px;
+      font-size: 1em;
+      font-style: italic;
+      font-weight: bold
+    }
+
+    html body dl dd {
+      padding: 0 16px;
+      margin-bottom: 16px
+    }
+
+    html body code {
+      font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+      font-size: .85em !important;
+      color: #000;
+      background-color: #f0f0f0;
+      border-radius: 3px;
+      padding: .2em 0
+    }
+
+    html body code::before,
+    html body code::after {
+      letter-spacing: -0.2em;
+      content: "\00a0"
+    }
+
+    html body pre>code {
+      padding: 0;
+      margin: 0;
+      font-size: .85em !important;
+      word-break: normal;
+      white-space: pre;
+      background: transparent;
+      border: 0
+    }
+
+    html body .highlight {
+      margin-bottom: 16px
+    }
+
+    html body .highlight pre,
+    html body pre {
+      padding: 1em;
+      overflow: auto;
+      font-size: .85em !important;
+      line-height: 1.45;
+      border: #d6d6d6;
+      border-radius: 3px
+    }
+
+    html body .highlight pre {
+      margin-bottom: 0;
+      word-break: normal
+    }
+
+    html body pre code,
+    html body pre tt {
+      display: inline;
+      max-width: initial;
+      padding: 0;
+      margin: 0;
+      overflow: initial;
+      line-height: inherit;
+      word-wrap: normal;
+      background-color: transparent;
+      border: 0
+    }
+
+    html body pre code:before,
+    html body pre tt:before,
+    html body pre code:after,
+    html body pre tt:after {
+      content: normal
+    }
+
+    html body p,
+    html body blockquote,
+    html body ul,
+    html body ol,
+    html body dl,
+    html body pre {
+      margin-top: 0;
+      margin-bottom: 16px
+    }
+
+    html body kbd {
+      color: #000;
+      border: 1px solid #d6d6d6;
+      border-bottom: 2px solid #c7c7c7;
+      padding: 2px 4px;
+      background-color: #f0f0f0;
+      border-radius: 3px
+    }
+
+    @media print {
+      html body {
+        background-color: #fff
+      }
+
+      html body h1,
+      html body h2,
+      html body h3,
+      html body h4,
+      html body h5,
+      html body h6 {
+        color: #000;
+        page-break-after: avoid
+      }
+
+      html body blockquote {
+        color: #5c5c5c
+      }
+
+      html body pre {
+        page-break-inside: avoid
+      }
+
+      html body table {
+        display: table
+      }
+
+      html body img {
+        display: block;
+        max-width: 100%;
+        max-height: 100%
+      }
+
+      html body pre,
+      html body code {
+        word-wrap: break-word;
+        white-space: pre
+      }
+    }
+
+    .markdown-preview {
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box
+    }
+
+    .markdown-preview .pagebreak,
+    .markdown-preview .newpage {
+      page-break-before: always
+    }
+
+    .markdown-preview pre.line-numbers {
+      position: relative;
+      padding-left: 3.8em;
+      counter-reset: linenumber
+    }
+
+    .markdown-preview pre.line-numbers>code {
+      position: relative
+    }
+
+    .markdown-preview pre.line-numbers .line-numbers-rows {
+      position: absolute;
+      pointer-events: none;
+      top: 1em;
+      font-size: 100%;
+      left: 0;
+      width: 3em;
+      letter-spacing: -1px;
+      border-right: 1px solid #999;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none
+    }
+
+    .markdown-preview pre.line-numbers .line-numbers-rows>span {
+      pointer-events: none;
+      display: block;
+      counter-increment: linenumber
+    }
+
+    .markdown-preview pre.line-numbers .line-numbers-rows>span:before {
+      content: counter(linenumber);
+      color: #999;
+      display: block;
+      padding-right: .8em;
+      text-align: right
+    }
+
+    .markdown-preview .mathjax-exps .MathJax_Display {
+      text-align: center !important
+    }
+
+    .markdown-preview:not([for="preview"]) .code-chunk .btn-group {
+      display: none
+    }
+
+    .markdown-preview:not([for="preview"]) .code-chunk .status {
+      display: none
+    }
+
+    .markdown-preview:not([for="preview"]) .code-chunk .output-div {
+      margin-bottom: 16px
+    }
+
+    .scrollbar-style::-webkit-scrollbar {
+      width: 8px
+    }
+
+    .scrollbar-style::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background-color: transparent
+    }
+
+    .scrollbar-style::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background-color: rgba(150, 150, 150, 0.66);
+      border: 4px solid rgba(150, 150, 150, 0.66);
+      background-clip: content-box
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode]) {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      margin: 0;
+      padding: 0;
+      overflow: auto
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview {
+      position: relative;
+      top: 0
+    }
+
+    @media screen and (min-width:914px) {
+      html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview {
+        padding: 2em calc(50% - 457px + 2em)
+      }
+    }
+
+    @media screen and (max-width:914px) {
+      html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview {
+        padding: 2em
+      }
+    }
+
+    @media screen and (max-width:450px) {
+      html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview {
+        font-size: 14px !important;
+        padding: 1em
+      }
+    }
+
+    @media print {
+      html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn {
+        display: none
+      }
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn {
+      position: fixed;
+      bottom: 8px;
+      left: 8px;
+      font-size: 28px;
+      cursor: pointer;
+      color: inherit;
+      z-index: 99;
+      width: 32px;
+      text-align: center;
+      opacity: .4
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn {
+      opacity: 1
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 300px;
+      height: 100%;
+      padding: 32px 0 48px 0;
+      font-size: 14px;
+      box-shadow: 0 0 4px rgba(150, 150, 150, 0.33);
+      box-sizing: border-box;
+      overflow: auto;
+      background-color: inherit
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar {
+      width: 8px
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background-color: transparent
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background-color: rgba(150, 150, 150, 0.66);
+      border: 4px solid rgba(150, 150, 150, 0.66);
+      background-clip: content-box
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a {
+      text-decoration: none
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul {
+      padding: 0 1.6em;
+      margin-top: .8em
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li {
+      margin-bottom: .8em
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul {
+      list-style-type: none
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
+      left: 300px;
+      width: calc(100% - 300px);
+      padding: 2em calc(50% - 457px - 150px);
+      margin: 0;
+      box-sizing: border-box
+    }
+
+    @media screen and (max-width:1274px) {
+      html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
+        padding: 2em
+      }
+    }
+
+    @media screen and (max-width:450px) {
+      html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
+        width: 100%
+      }
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview {
+      left: 50%;
+      transform: translateX(-50%)
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc {
+      display: none
+    }
+
+    /* Please visit the URL below for more information: */
+    /*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+  </style>
+</head>
+
+<body for="html-export" style="background: url(../resourse/img/background_img.jpg);background-repeat: no-repeat;
+background-attachment: fixed;">
+
+    <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="markdown%E5%85%A5%E9%97%A8%E4%B8%80">Markdown&#x5165;&#x95E8;(&#x4E00;)</h1>
+  
+      <h2 class="mume-header" id="00-nbsp-markdown">00 &#xA0; Markdown</h2>
+  
+      <p>
+        Markdown&#x662F;&#x4E00;&#x79CD;&#x8F7B;&#x91CF;&#x7EA7;&#x6807;&#x8BB0;&#x8BED;&#x8A00;&#xFF0C;&#x521B;&#x59CB;&#x4EBA;&#x4E3A;&#x7EA6;&#x7FF0;&#xB7;&#x683C;&#x9C81;&#x4F2F;&#xFF08;&#x82F1;&#x8BED;&#xFF1A;John
+        Gruber&#xFF09;&#x3002;
+        &#x5B83;&#x5141;&#x8BB8;&#x4EBA;&#x4EEC;&#x4F7F;&#x7528;&#x6613;&#x8BFB;&#x6613;&#x5199;&#x7684;&#x7EAF;&#x6587;&#x672C;&#x683C;&#x5F0F;&#x7F16;&#x5199;&#x6587;&#x6863;&#xFF0C;&#x7136;&#x540E;&#x8F6C;&#x6362;&#x6210;&#x6709;&#x6548;&#x7684;XHTML&#xFF08;&#x6216;&#x8005;HTML&#xFF09;&#x6587;&#x6863;&#x3002;&#x8FD9;&#x79CD;&#x8BED;&#x8A00;&#x5438;&#x6536;&#x4E86;&#x5F88;&#x591A;&#x5728;&#x7535;&#x5B50;&#x90AE;&#x4EF6;&#x4E2D;&#x5DF2;&#x6709;&#x7684;&#x7EAF;&#x6587;&#x672C;&#x6807;&#x8BB0;&#x7684;&#x7279;&#x6027;&#x3002;
+      </p>
+      <h2 class="mume-header" id="01-nbsp-%E7%8E%AF%E5%A2%83">01 &#xA0; &#x73AF;&#x5883;</h2>
+  
+      <p>&#x4F8B;&#x5982;<a href="https://code.visualstudio.com/">vscode</a>&#x3001;<a
+          href="https://www.typora.io/">Typora</a>&#x3001;<a
+          href="https://draftin.com/">Draft</a>&#x3001;Byword&#x7B49;&#xFF0C;&#x8FD9;&#x91CC;&#x4E0D;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#xFF0C;&#x76F4;&#x63A5;&#x63A8;&#x8350;&#x4F7F;&#x7528;vscode&#xFF0C;&#x56E0;&#x4E3A;&#x5199;&#x524D;&#x7AEF;&#x4EE3;&#x7801;&#x7528;vscode&#x5F88;&#x591A;&#xFF0C;&#x6240;&#x4EE5;&#x5F00;&#x59CB;&#x5C31;&#x9009;&#x62E9;&#x4E86;vscode&#x3002;
+      </p>
+      <p>vscode&#x5B89;&#x88C5;Markdown Preview
+        Enhanced&#x63D2;&#x4EF6;&#x542F;&#x7528;&#xFF0C;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;Markdown&#x6587;&#x4EF6;&#xFF0C;&#x540E;&#x7F00;
+        .md,&#x4E4B;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x5199;&#x7B14;&#x8BB0;&#x4E86;&#x3002;</p>
+      <h2 class="mume-header" id="02-nbsp-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95">02 &#xA0; &#x57FA;&#x672C;&#x8BED;&#x6CD5;
+      </h2>
+  
+      <h4 class="mume-header" id="%E6%A0%87%E9%A2%98">&#x6807;&#x9898;</h4>
+  
+      <p>&#x4F7F;&#x7528; # &#x53F7;&#x53EF;&#x8868;&#x793A; 1-6
+        &#x7EA7;&#x6807;&#x9898;&#xFF0C;&#x4E00;&#x7EA7;&#x6807;&#x9898;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A; #
+        &#x53F7;&#xFF0C;&#x4E8C;&#x7EA7;&#x6807;&#x9898;&#x5BF9;&#x5E94;&#x4E24;&#x4E2A; #
+        &#x53F7;&#xFF0C;&#x4EE5;&#x6B64;&#x7C7B;&#x63A8;&#x3002;</p>
+      <pre data-role="codeBlock" data-info="markdown" class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> &#x4E00;&#x7EA7;&#x6807;&#x9898;</span>
+  <span class="token title important"><span class="token punctuation">##</span> &#x4E8C;&#x7EA7;&#x6807;&#x9898;</span>
+  <span class="token title important"><span class="token punctuation">###</span> &#x4E09;&#x7EA7;&#x6807;&#x9898;</span>
+  <span class="token title important"><span class="token punctuation">####</span> &#x56DB;&#x7EA7;&#x6807;&#x9898;</span>
+  <span class="token title important"><span class="token punctuation">#####</span> &#x4E94;&#x7EA7;&#x6807;&#x9898;</span>
+  <span class="token title important"><span class="token punctuation">######</span> &#x516D;&#x7EA7;&#x6807;&#x9898;</span>
+  </pre>
+      <p>preview</p>
+      <h1 class="mume-header" id="%E4%B8%80%E7%BA%A7%E6%A0%87%E9%A2%98">&#x4E00;&#x7EA7;&#x6807;&#x9898;</h1>
+  
+      <h2 class="mume-header" id="%E4%BA%8C%E7%BA%A7%E6%A0%87%E9%A2%98">&#x4E8C;&#x7EA7;&#x6807;&#x9898;</h2>
+  
+      <h3 class="mume-header" id="%E4%B8%89%E7%BA%A7%E6%A0%87%E9%A2%98">&#x4E09;&#x7EA7;&#x6807;&#x9898;</h3>
+  
+      <h4 class="mume-header" id="%E5%9B%9B%E7%BA%A7%E6%A0%87%E9%A2%98">&#x56DB;&#x7EA7;&#x6807;&#x9898;</h4>
+  
+      <h5 class="mume-header" id="%E4%BA%94%E7%BA%A7%E6%A0%87%E9%A2%98">&#x4E94;&#x7EA7;&#x6807;&#x9898;</h5>
+  
+      <h6 class="mume-header" id="%E5%85%AD%E7%BA%A7%E6%A0%87%E9%A2%98">&#x516D;&#x7EA7;&#x6807;&#x9898;</h6>
+  
+      <h4 class="mume-header" id="%E5%AD%97%E4%BD%93">&#x5B57;&#x4F53;</h4>
+  
+      <pre data-role="codeBlock" data-info="markdown" class="language-markdown"><span class="token italic"><span class="token punctuation">*</span><span class="token content">&#x659C;&#x4F53;&#x6587;&#x672C;</span><span class="token punctuation">*</span></span>
+  <span class="token italic"><span class="token punctuation">_</span><span class="token content">&#x659C;&#x4F53;&#x6587;&#x672C;</span><span class="token punctuation">_</span></span>
+  <span class="token bold"><span class="token punctuation">**</span><span class="token content">&#x7C97;&#x4F53;&#x6587;&#x672C;</span><span class="token punctuation">**</span></span>
+  <span class="token bold"><span class="token punctuation">__</span><span class="token content">&#x7C97;&#x4F53;&#x6587;&#x672C;</span><span class="token punctuation">__</span></span>
+  <span class="token bold"><span class="token punctuation">**</span><span class="token content"><span class="token italic"><span class="token punctuation">*</span><span class="token content">&#x7C97;&#x659C;&#x4F53;&#x6587;&#x672C;</span><span class="token punctuation">*</span></span></span><span class="token punctuation">**</span></span>
+  <span class="token bold"><span class="token punctuation">__</span><span class="token content"><span class="token italic"><span class="token punctuation">_</span><span class="token content">&#x7C97;&#x659C;&#x4F53;&#x6587;&#x672C;</span><span class="token punctuation">_</span></span></span><span class="token punctuation">__</span></span>
+  </pre>
+      <p>preview<br>
+        <em>&#x659C;&#x4F53;&#x6587;&#x672C;</em><br>
+        <em>&#x659C;&#x4F53;&#x6587;&#x672C;</em><br>
+        <strong>&#x7C97;&#x4F53;&#x6587;&#x672C;</strong><br>
+        <strong>&#x7C97;&#x4F53;&#x6587;&#x672C;</strong><br>
+        <em><strong>&#x7C97;&#x659C;&#x4F53;&#x6587;&#x672C;</strong></em><br>
+        <em><strong>&#x7C97;&#x659C;&#x4F53;&#x6587;&#x672C;</strong></em>
+      </p>
+      <h4 class="mume-header" id="%E4%BB%A3%E7%A0%81">&#x4EE3;&#x7801;</h4>
+  
+      <p><img
+          src="data:image/png;base64,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"
+          alt="adfa"><br>
+        preview</p>
+      <pre data-role="codeBlock" data-info="JavaScript" class="language-javascript"><span class="token function">$</span><span class="token punctuation">(</span><span class="token dom variable">document</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">ready</span><span class="token punctuation">(</span><span class="token keyword keyword-function">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">&apos;AnnGreen&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+  </pre>
+      <h4 class="mume-header" id="%E9%93%BE%E6%8E%A5">&#x94FE;&#x63A5;</h4>
+  
+      <pre data-role="codeBlock" data-info="markdown" class="language-markdown"><span class="token url">[<span class="token content">AnnGreen&#x7684;&#x7B80;&#x4E66;&#x4E3B;&#x9875;</span>](<span class="token url">https://www.jianshu.com/u/3677ca70057e</span>)</span>
+  </pre>
+      <p>preview<br>
+        <a href="https://www.jianshu.com/u/3677ca70057e">AnnGreen&#x7684;&#x7B80;&#x4E66;&#x4E3B;&#x9875;</a>
+      </p>
+      <h4 class="mume-header" id="%E7%A9%BA%E6%A0%BC">&#x7A7A;&#x683C;</h4>
+  
+      <pre data-role="codeBlock" data-info="markdown" class="language-markdown">&#x624B;&#x52A8;&#x8F93;&#x5165;&#x7A7A;&#x683C; &#xFF08;<span class="token entity named-entity" title="&#xA0;">&amp;nbsp;</span>&#xFF09;&#x3002;&#x6CE8;&#x610F;&#xFF01;&#x6B64;&#x65F6;&#x7684;&#x5206;&#x53F7;&#x4E3A;&#x82F1;&#x6587;&#x5206;&#x53F7;   
+  
+  &#x4F7F;&#x7528;&#x5168;&#x89D2;&#x7A7A;&#x683C;&#x3002;&#x5373;&#xFF1A;&#x5728;&#x5168;&#x89D2;&#x8F93;&#x5165;&#x72B6;&#x6001;&#x4E0B;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x7A7A;&#x683C;&#x952E;
+  </pre>
+      <h4 class="mume-header" id="%E5%9B%BE%E7%89%87">&#x56FE;&#x7247;</h4>
+  
+      <p>
+        1&#x3001;&#x4F7F;&#x7528;url&#x6216;&#x8005;&#x67D0;&#x4E2A;&#x672C;&#x673A;&#x8DEF;&#x5F84;(&#x7F3A;&#x70B9;&#xFF1A;&#x8DEF;&#x5F84;&#x51FA;&#x95EE;&#x9898;&#x5C31;&#x4E0D;&#x884C;&#x4E86;)
+      </p>
+      <pre data-role="codeBlock" data-info="markdown" class="language-markdown"><span class="token url"><span class="token operator">!</span>[<span class="token content">alt &#x5C5E;&#x6027;&#x6587;&#x672C;</span>](<span class="token url">&#x56FE;&#x7247;&#x5730;&#x5740;</span>)</span>
+  
+  <span class="token url"><span class="token operator">!</span>[<span class="token content">alt &#x5C5E;&#x6027;&#x6587;&#x672C;</span>](<span class="token url">&#x56FE;&#x7247;&#x5730;&#x5740;</span> <span class="token string">&quot;&#x53EF;&#x9009;&#x6807;&#x9898;&quot;</span>)</span>   
+  </pre>
+      <p>&#x4F8B;&#x5B50;</p>
+      <pre data-role="codeBlock" data-info="markdown" class="language-markdown"><span class="token url"><span class="token operator">!</span>[<span class="token content">&#x6211;&#x7684;&#x5934;&#x50CF;</span>](<span class="token url">https://upload.jianshu.io/users/upload_avatars/26478343/ae5b2fc7-e4c8-4f1d-a945-be197fec1d43.jpeg?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/300/format/webp</span>)</span>
+  </pre>
+      <p>&#x6548;&#x679C;<br>
+        <img
+          src="https://upload.jianshu.io/users/upload_avatars/26478343/ae5b2fc7-e4c8-4f1d-a945-be197fec1d43.jpeg?imageMogr2/auto-orient/strip%7CimageView2/1/w/300/h/300/format/webp"
+          alt="&#x6211;&#x7684;&#x5934;&#x50CF;"><br>
+        2&#x3001;&#x4F7F;&#x7528;base64&#x7F16;&#x7801;&#x5185;&#x5D4C;&#x5230;md&#x6587;&#x6863;&#x4E2D;<br>
+        &#x4F7F;&#x7528;&#x5DE5;&#x5177;(<a href="https://oktools.net/image2base64">OKtools</a>&#x3001;<a
+          href="http://www.gjw123.com/tools-ImageToBase64">&#x5DE5;&#x5177;123</a>&#x6216;&#x8005;&#x5176;&#x4ED6;&#x90FD;&#x884C;)&#x628A;&#x56FE;&#x7247;&#x8F6C;&#x6210;base64&#x7F16;&#x7801;
+      </p>
+      <pre data-role="codeBlock" data-info="markdown" class="language-markdown"><span class="token url"><span class="token operator">!</span>[<span class="token content">&#x5C5E;&#x6027;&#x6587;&#x672C;</span>](<span class="token url">&#x53D8;&#x91CF;&#x540D;</span>)</span>  
+  </pre>
+      <p>
+        &#x7136;&#x540E;&#x518D;&#x6587;&#x6863;&#x5E95;&#x90E8;&#x5199;&#x6E05;&#x53D8;&#x91CF;&#x540D;&#x5BF9;&#x5E94;&#x7684;base64&#x7F16;&#x7801;&#x503C;
+      </p>
+      <pre data-role="codeBlock" data-info="markdown" class="language-markdown">[&#x53D8;&#x91CF;&#x540D;]:base64&#x7F16;&#x7801;&#x503C;
+  </pre>
+      <p>
+        &#x4F8B;&#x5B50;&#x5C31;&#x4E0D;&#x5199;&#x4E86;&#xFF0C;&#x4E00;&#x4E2A;&#x56FE;&#x7247;&#x7684;base64&#x7684;&#x7F16;&#x7801;&#x503C;&#x592A;&#x957F;&#x4E86;
+      </p>
+      <h2 class="mume-header" id="03-nbsp-%E5%AF%BC%E5%87%BA">03 &#xA0; &#x5BFC;&#x51FA;</h2>
+  
+      <p>
+        vscode&#x4E2D;&#x5B89;&#x88C5;&#x4E86;&#x63D2;&#x4EF6;&#x7684;&#x8BDD;&#xFF0C;&#x76F4;&#x63A5;&#x518D;&#x53F3;&#x4FA7;&#x9884;&#x89C8;&#x9875;&#x9762;&#x53F3;&#x952E;&#xFF0C;&#x53EF;&#x4EE5;&#x5BFC;&#x51FA;&#x4E3A;html&#x3001;pdf&#x7B49;&#xFF0C;&#x81EA;&#x7531;&#x9009;&#x62E9;&#x3002;
+      </p>
+      <h2 class="mume-header" id="04-nbsp-%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E5%8F%82%E8%80%83">04 &#xA0;
+        &#x4E00;&#x4E9B;&#x6709;&#x7528;&#x7684;&#x53C2;&#x8003;</h2>
+  
+      <p><a href="https://www.markdown.xyz/basic-syntax/">markdown&#x4E2D;&#x6587;&#x6307;&#x5357;</a></p>
+  
+    </div>
+  
+
+
+</body>
+
+</html>
