@@ -10,7 +10,7 @@ jobs:
     - name: vuepress-deploy
       uses: jenkey2011/vuepress-deploy@master
       env:
-        ACCESS_TOKEN: ${{ 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 }}
+        ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         TARGET_REPO: anngreen1/anngreen1.github.io
         TARGET_BRANCH: master
         BUILD_SCRIPT: npm run docs:dev
