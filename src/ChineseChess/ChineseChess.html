@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            width: 650px;
+            height: 650px;
+            margin: 0 auto;
+        }
+
+        table {
+            width: 627px;
+            height: 600px;
+            padding: 6px;
+            border: 5px solid black;
+            background: url(https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/680adb3d585447e7bbfb3adfe3b1a399~tplv-k3u1fbpfcp-watermark.image?);
+        }
+
+        td {
+            width: 60px;
+            height: 64px;
+            border-radius: 50%;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .bgc1 {
+            background: url(https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ec1b25f321df4a609e12cf68b01acfd1~tplv-k3u1fbpfcp-watermark.image?);
+            background-size: 94%;
+            background-position: 1px 0px;
+        }
+
+        .bgc2 {
+            background: url(https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f39713dc1ab249358827a4a49a4c0042~tplv-k3u1fbpfcp-watermark.image?);
+            background-size: 94%;
+            background-position: 1px 0px;
+        }
+
+        .bgc3 {
+            background: url(https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/126fa2823bc7403290207272a5c3f577~tplv-k3u1fbpfcp-watermark.image?);
+            background-size: 94%;
+            background-position: 1px 0px;
+        }
+
+        .bgc4 {
+            background: url(https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/56b5dca175b847cda3a3856f7ef93a53~tplv-k3u1fbpfcp-watermark.image?);
+            background-size: 94%;
+            background-position: 2px -1px;
+        }
+
+        .bgc5 {
+            background: url(https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6d0c6610092d45e989d7d60e02fe33b1~tplv-k3u1fbpfcp-watermark.image?);
+            background-size: 94%;
+            background-position: 1px 0px;
+        }
+
+        .bgc6 {
+            background: url(https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a74fb010769a437092e4732fc13cd340~tplv-k3u1fbpfcp-watermark.image?);
+            background-size: 94%;
+            background-position: 1px 0px;
+        }
+
+        .bgc7 {
+            background: url(https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3792bbce756c4a44a325494631aca003~tplv-k3u1fbpfcp-watermark.image?);
+            background-size: 94%;
+            background-position: 1px 0px;
+        }
+
+        .bgc8 {
+            background: url(https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c749a6a7cd014b7c8e4540d6d4f694c5~tplv-k3u1fbpfcp-watermark.image?);
+            background-size: 94%;
+            background-position: 1px 0px;
+        }
+
+        .bgc9 {
+            background: url(https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2a0dc22d1556499c947d451663bd1923~tplv-k3u1fbpfcp-watermark.image?);
+            background-size: 94%;
+            background-position: 1px 0px;
+        }
+
+        .bgc10 {
+            background: url(https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a36d52ebc148464794d566a5e98640ec~tplv-k3u1fbpfcp-watermark.image?);
+            background-size: 94%;
+            background-position: 1px 0px;
+        }
+
+        .bgc11 {
+            background: url(https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d9726dcbdd6d403c9ad3d079973b94fa~tplv-k3u1fbpfcp-watermark.image?);
+            background-size: 94%;
+            background-position: 1px 0px;
+        }
+
+        .bgc12 {
+            background: url(https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b8bc35a924ba4d5f8ddc8d585e4fe08a~tplv-k3u1fbpfcp-watermark.image?);
+            background-size: 94%;
+            background-position: 1px 0px;
+        }
+
+        .bgc13 {
+            background: url(https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bd02ecac5ff54de99d760b44bcdfd9c5~tplv-k3u1fbpfcp-watermark.image?);
+            background-size: 94%;
+            background-position: 1px 0px;
+        }
+
+        .bgc14 {
+            background: url(https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/706d2f37594148abb0877fb32eb1f3ad~tplv-k3u1fbpfcp-watermark.image?);
+            background-size: 94%;
+            background-position: 1px 0px;
+        }
+
+        .message1,
+        .message2 {
+            position: absolute;
+            left: 45%;
+            top: 40%;
+            width: 100px;
+            height: 100px;
+            background-color: rgba(138, 136, 136, 0.493);
+            line-height: 100px;
+            font-size: 60px;
+            color: red;
+        }
+
+        .message1 {
+            display: none;
+        }
+
+        .message2 {
+            display: none;
+            width: 200px;
+        }
+
+        .message3 {
+            position: absolute;
+            left: -20%;
+            top: 40%;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            font-size: 60px;
+            color: red;
+        }
+
+        /* @media screen and (max-width:700px) {
+      .message3{
+        display: none;
+      }
+    } */
+        /* 棋子选中的样式 */
+        .checked {
+            transform: translateY(-15px);
+            transition: all .2s;
+        }
+
+        /* 棋子可移动坐标显示的样式 */
+        .showWays {
+            position: relative;
+        }
+
+        .showWays::after {
+            content: '';
+            position: absolute;
+            top: 23px;
+            left: 26px;
+            background-color: rgb(19, 23, 235);
+            width: 10px;
+            height: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 爷爷70多岁了，很喜欢下象棋，过年的时候经常陪他下棋。当时就想着以后一定要写一个象棋小游戏，心里也是默默立下了这个新年flag -->
+    <div class="box">
+        <table></table>
+        <div class="message1">
+            吃！
+        </div>
+        <div class="message2">
+            将军！
+        </div>
+        <div class="message3">
+            红先
+        </div>
+    </div>
+    <script>
+        let list = [ // 棋盘的初始化布局，num代表棋子种类，type代表阵营 
+            [{ num: 1, type: 1 }, { num: 2, type: 1 }, { num: 3, type: 1 }, { num: 4, type: 1 }, { num: 5, type: 1 }, { num: 4, type: 1 }, { num: 3, type: 1 }, { num: 2, type: 1 }, { num: 1, type: 1 }],
+            [{ num: 0 }, { num: 0 }, { num: 0 }, { num: 0 }, { num: 0 }, { num: 0 }, { num: 0 }, { num: 0 }, { num: 0 }],
+            [{ num: 0 }, { num: 6, type: 1 }, { num: 0 }, { num: 0 }, { num: 0 }, { num: 0 }, { num: 0 }, { num: 6, type: 1 }, { num: 0 }],
+            [{ num: 7, type: 1 }, { num: 0 }, { num: 7, type: 1 }, { num: 0 }, { num: 7, type: 1 }, { num: 0 }, { num: 7, type: 1 }, { num: 0 }, { num: 7, type: 1 }],
+            [{ num: 0 }, { num: 0 }, { num: 0 }, { num: 0 }, { num: 0 }, { num: 0 }, { num: 0 }, { num: 0 }, { num: 0 }],
+            [{ num: 0 }, { num: 0 }, { num: 0 }, { num: 0 }, { num: 0 }, { num: 0 }, { num: 0 }, { num: 0 }, { num: 0 }],
+            [{ num: 7, type: 2 }, { num: 0 }, { num: 7, type: 2 }, { num: 0 }, { num: 7, type: 2 }, { num: 0 }, { num: 7, type: 2 }, { num: 0 }, { num: 7, type: 2 }],
+            [{ num: 0 }, { num: 6, type: 2 }, { num: 0 }, { num: 0 }, { num: 0 }, { num: 0 }, { num: 0 }, { num: 6, type: 2 }, { num: 0 }],
+            [{ num: 0 }, { num: 0 }, { num: 0 }, { num: 0 }, { num: 0 }, { num: 0 }, { num: 0 }, { num: 0 }, { num: 0 }],
+            [{ num: 1, type: 2 }, { num: 2, type: 2 }, { num: 3, type: 2 }, { num: 4, type: 2 }, { num: 5, type: 2 }, { num: 4, type: 2 }, { num: 3, type: 2 }, { num: 2, type: 2 }, { num: 1, type: 2 }],
+        ]
+        let menu = { // 棋子的枚举属性
+            0: (index, index2, item2, tr) => { // 无棋子
+                return new Qi(index, index2, item2, tr, 0)
+            },
+            1: (index, index2, item2, tr, type) => { // 车
+                return new Ju(index, index2, item2, tr, 1, type)
+            },
+            2: (index, index2, item2, tr, type) => { // 马
+                return new Ma(index, index2, item2, tr, 2, type)
+            },
+            3: (index, index2, item2, tr, type) => { // 象
+                return new Xiang(index, index2, item2, tr, 3, type)
+            },
+            4: (index, index2, item2, tr, type) => { // 士
+                return new Shi(index, index2, item2, tr, 4, type)
+            },
+            5: (index, index2, item2, tr, type) => { // 将
+                return new Jiang(index, index2, item2, tr, 5, type)
+            },
+            6: (index, index2, item2, tr, type) => { // 炮
+                return new Pao(index, index2, item2, tr, 6, type)
+            },
+            7: (index, index2, item2, tr, type) => { // 卒
+                return new Zu(index, index2, item2, tr, 7, type)
+            },
+        }
+        let typeList = { // 下棋顺序枚举
+            1: '黑棋',
+            2: '红棋'
+        }
+        class Qi { // 棋子公共类
+            constructor(index, index2, item2, tr, name, type) {
+                this.num = name // 棋子枚举属性
+                this.type = type // 棋子阵营标识
+                this.tr = tr
+                this.td = document.createElement('td')
+                this.y = index
+                this.x = index2
+                this.td.dataset.y = index  // 给每一个td元素设置坐标
+                this.td.dataset.x = index2  // 给每一个td元素设置坐标
+                item2 && type == 2 ? this.td.classList.add(`bgc${item2 + 7}`) : this.td.classList.add(`bgc${item2}`)
+                this.waysArr = [] // 棋子可移动坐标的存放数组
+                tr.appendChild(this.td)
+            }
+            checked() { // 选中棋子
+                console.log(list, '棋盘的对象数组');
+                if (sequence) { // 处理下棋顺序
+                    if (list[this.y][this.x].type == 1) { // 黑棋下
+                        let result = this.getLine(this.x, this.y, 1) // 获取这个棋子的所有可移动路线
+                        this.td.classList.add('checked')
+                    } else {
+                        clear()
+                    }
+                } else {
+                    if (list[this.y][this.x].type == 2) { // 红棋下
+                        let result = this.getLine(this.x, this.y, 1) // 获取这个棋子的所有可移动路线
+                        this.td.classList.add('checked')
+                    } else {
+                        clear()
+                    }
+                }
+            }
+            down() { // 放下棋子
+                this.td.classList.remove('checked')
+                this.showWays(this.waysArr, 0) // 隐藏移动的坐标
+            }
+            filterLine(arr, x, y, num) { // 筛选移动路径上的棋子，通用方法
+                let resultArr = arr.flat().filter(item => item?.num === 0 || item?.type && item.type !== this.type)
+                return resultArr
+            }
+            loopMethod(arr, order, name = 1) { // 自定义遍历方法,order控制遍历的顺序
+                let resultArr = []
+                if (!arr.length) return resultArr
+                if (order < 0) { // 反方向遍历数组
+                    for (let i = arr.length - 1; i >= 0; i--) {
+                        if (arr[i].num) {
+                            if (name == 1) { // 车的吃子方法
+                                if (arr[i].type != this.type) resultArr.push(arr[i])
+                                break
+                            } else { // 炮的吃子方法
+                                for (let j = i - 1; j >= 0; j--) {
+                                    if (arr[j].type != this.type && arr[j].num) {
+                                        resultArr.push(arr[j])
+                                        break
+                                    }
+                                }
+                                break
+                            }
+                        }
+                        resultArr.push(arr[i])
+                    }
+                } else {
+                    for (let i = 0; i < arr.length; i++) {
+                        if (arr[i].num) {
+                            if (name == 1) { // 车的吃子方法
+                                if (arr[i].type != this.type) resultArr.push(arr[i])
+                                break
+                            } else { // 炮的吃子方法
+                                for (let j = i + 1; j < arr.length; j++) {
+                                    ;
+                                    if (arr[j].type != this.type && arr[j].num) {
+                                        resultArr.push(arr[j])
+                                        break
+                                    }
+                                }
+                                break
+                            }
+                        }
+                        resultArr.push(arr[i])
+                    }
+                }
+                return resultArr
+            }
+            showWays(arr, flag) { // 显示棋子可移动到的坐标
+                this.waysArr = arr
+                // 选中状态下显示可移动坐标,未选择不显示
+                this.waysArr.forEach(item => {
+                    flag ? item.td.classList.add('showWays') : item.td.classList.remove('showWays')
+                })
+            }
+            move(x, y) { // 棋子移动
+                let allowMove = this.waysArr.find(item => { // 判断将要移动的坐标是否在可移动范围内
+                    return item.x == x && item.y == y
+                })
+                if (!allowMove) { // 不在可移动范围，就将棋子放下
+                    return this.down()
+                }
+                let nextChess = list[y][x] // 移动到的坐标
+                let nextType = nextChess.type // 如果坐标上有其他棋子，获取它的阵营
+                let y1 = this.td.dataset.y
+                let x1 = this.td.dataset.x
+                list[y1][x1] = menu[0]([y1], [x1], 0, this.tr)
+                list[y][x] = menu[this.num]([y], [x], this.num, this.tr, this.type)
+                this.td.dataset.y = y
+                this.td.dataset.x = x
+                sequence = !sequence // 交换下棋顺序
+                let arr = this.getLine(+x, +y, 0) // 计算棋子下一步可移动的坐标,判断是否显示将军
+                if (arr.find(item => item.num == 5 && item.type !== this.type)) { // 如果棋子下一步的路径包涵将，就显示将军
+                    this.showMessage(2) // 1：吃 ； 2：将军
+                } else if (nextType && nextType !== this.type) {
+                    this.showMessage(1) // 1：吃 ； 2：将军
+                }
+                render()
+                if (nextChess.num === 5) { // 将军被吃掉,游戏结束
+                    alert(`游戏结束,${typeList[this.type]}胜!`)
+                }
+            }
+            showMessage(num) { // 吃子和将军的时候给出提示
+                if (num == 2) { // 将军提示
+                    console.log('显示将军');
+                    document.querySelector('.message2').style.display = 'block'
+                    setTimeout(() => {
+                        document.querySelector('.message2').style.display = 'none'
+                    }, 1000)
+                } else { // 吃子提示
+                    console.log('显示吃');
+                    document.querySelector('.message1').style.display = 'block'
+                    setTimeout(() => {
+                        document.querySelector('.message1').style.display = 'none'
+                    }, 1000)
+                }
+            }
+        }
+        class Ju extends Qi { // 车
+            constructor(index, index2, item2, tr, name, type) {
+                super(index, index2, item2, tr, name, type)
+            }
+            getLine(x, y, num) { // 获取车棋子可以移动到的所有坐标,num值控制是否显示路径
+                console.log(x, y, '选择棋子的坐标');
+                let lineArr = list.map((item, index) => { // 未筛选的所有可移动的坐标
+                    return index === +y ? item : item[x]
+                })
+                let resultArr = this.filterLine(lineArr, x, y, num) // 将路径上有棋子的坐标筛选出来
+                this.showWays(resultArr, num) // 棋盘上展示可移动的路径
+                return resultArr
+            }
+            filterLine(arr, x, y, num) { // 筛选移动路径上的棋子
+                // 以选中棋子为中心，将x轴和y轴的点分为4份，每一份都要遍历找出满足条件的坐标，最后再合并
+                let yArr1 = arr.slice(0, y)
+                let yArr2 = arr.slice(y + 1, arr.length)
+                let xArr1 = arr[y].slice(0, x)
+                let xArr2 = arr[y].slice(x + 1, arr[y].length)
+                console.log({ yArr1, yArr2, xArr1, xArr2 });
+                return [
+                    ...this.loopMethod(xArr1, -1, this.num), // loopMethod：自定义的遍历方法
+                    ...this.loopMethod(xArr2, 1, this.num),
+                    ...this.loopMethod(yArr1, -1, this.num),
+                    ...this.loopMethod(yArr2, 1, this.num),
+                ]
+            }
+        }
+        class Ma extends Qi { // 马
+            constructor(index, index2, item2, tr, name, type) {
+                super(index, index2, item2, tr, name, type)
+            }
+            getLine(x, y, num) { // 获取马可以移动到的所有坐标
+                console.log(x, y, '选择棋子的坐标');
+                let lineArr = [] // 未筛选的所有可移动的坐标
+                if (!list[y][x - 1]?.num) {
+                    lineArr.push([list[y - 1]?.[x - 2], list[y + 1]?.[x - 2]])
+                }
+                if (!list[y][x + 1]?.num) {
+                    lineArr.push([list[y + 1]?.[x + 2], list[y - 1]?.[x + 2]])
+                }
+                if (!list[y - 1]?.[x].num) {
+                    lineArr.push([list[y - 2]?.[x + 1], list[y - 2]?.[x - 1]])
+                }
+                if (!list[y + 1]?.[x].num) {
+                    lineArr.push([list[y + 2]?.[x + 1], list[y + 2]?.[x - 1]])
+                }
+                let resultArr = this.filterLine(lineArr, x, y, num) // 将路径上有棋子的坐标筛选出来
+                this.showWays(resultArr, 1, num) // 棋盘上展示可移动的路径
+                return resultArr
+            }
+        }
+        class Xiang extends Qi { // 象
+            constructor(index, index2, item2, tr, name, type) {
+                super(index, index2, item2, tr, name, type)
+            }
+            getLine(x, y, num) { // 获取象可以移动到的所有坐标,象心不能有棋子，并且不能过河
+                console.log(x, y, '选择棋子的坐标');
+                let lineArr = [] // 未筛选的所有可移动的坐标
+                if (list[y - 1]?.[x - 1]?.num === 0 && y !== 5) {
+                    lineArr.push(list[y - 2][x - 2])
+                }
+                if (list[y + 1]?.[x + 1]?.num === 0 && y !== 4) {
+                    lineArr.push(list[y + 2][x + 2])
+                }
+                if (list[y - 1]?.[x + 1]?.num === 0 && y !== 5) {
+                    lineArr.push(list[y - 2][x + 2])
+                }
+                if (list[y + 1]?.[x - 1]?.num === 0 && y !== 4) {
+                    lineArr.push(list[y + 2][x - 2])
+                }
+                let resultArr = this.filterLine(lineArr, x, y, num) // 将路径上有棋子的坐标筛选出来
+                this.showWays(resultArr, 1, num) // 棋盘上展示可移动的路径
+                return resultArr
+            }
+        }
+        class Shi extends Qi { // 士
+            constructor(index, index2, item2, tr, name, type) {
+                super(index, index2, item2, tr, name, type)
+            }
+            getLine(x, y, num) { // 获取士可以移动到的所有坐标
+                console.log(x, y, '选择棋子的坐标');
+                let lineArr = [] // 未筛选的所有可移动的坐标
+                if (x == 3 || x == 5) {
+                    this.type == 1 ? lineArr.push(list[1][4]) : lineArr.push(list[8][4])
+                } else {
+                    this.type == 1 ? lineArr.push([list[0][3]], [list[0][5]], [list[2][3]], [list[2][5]])
+                        : lineArr.push([list[7][3]], [list[7][5]], [list[9][3]], [list[9][5]])
+                }
+                let resultArr = this.filterLine(lineArr, x, y, num) // 将路径上有棋子的坐标筛选出来
+                this.showWays(resultArr, 1, num)
+                return resultArr
+            }
+        }
+        class Jiang extends Qi { // 将
+            constructor(index, index2, item2, tr, name, type) {
+                super(index, index2, item2, tr, name, type)
+            }
+            getLine(x, y, num) { // 获取将可以移动到的所有坐标
+                console.log(x, y, '选择棋子的坐标');
+                let lineArr = [] // 未筛选的所有可移动的坐标
+                lineArr.push([list[y][x + 1]], [list[y][x - 1]], [list[y - 1]?.[x]], [list[y + 1]?.[x]])
+                let resultArr = this.filterLine(lineArr, x, y, num) // 将路径上有棋子的坐标筛选出来
+                this.showWays(resultArr, 1, num)
+                return resultArr
+            }
+            filterLine(arr, x, y, num) { // 筛选移动路径上的棋子
+                // 获取敌方帅的坐标
+                let resultArr = arr.filter(item => { // 将有棋子的坐标筛选出来，剩下的就是可以走的地方
+                    if (this.type == 1) {
+                        return item[0]?.x > 2 && item[0]?.x < 6 && item[0]?.y >= 0 && item[0]?.y < 3 && item[0]?.type != 1
+                    } else {
+                        return item[0]?.x > 2 && item[0]?.x < 6 && item[0]?.y >= 7 && item[0]?.y < 10 && item[0]?.type != 2
+                    }
+                })
+                let shuai = list.flat().find(item => item.num === 5 && item.type !== this.type) // 敌方帅的坐标
+                let jiang = resultArr.flat().find(item => item.x === shuai.x)
+                if (jiang) { // 判断将和帅可以走的坐标里面,有没有和对方将为同一列的
+                    let res = list.flat().find(item => {
+                        if (shuai.y > jiang.y) {
+                            return item.x === jiang.x && item.y > jiang.y && item.y < shuai.y && item.num
+                        } else {
+                            return item.x === jiang.x && item.y < jiang.y && item.y > shuai.y && item.num
+                        }
+                    })
+                    if (!res) { // 如果两个帅在同一列,并且中间没有棋子,就不可以走,把这个坐标删除
+                        let resArr = resultArr.flat().filter(item => !(item.x == jiang.x && item.y == jiang.y))
+                        return resArr
+                    }
+                }
+                return resultArr.flat()
+            }
+        }
+        class Pao extends Qi { // 炮
+            constructor(index, index2, item2, tr, name, type) {
+                super(index, index2, item2, tr, name, type)
+            }
+            getLine(x, y, num) { // 获取炮棋子可以移动到的所有坐标
+                console.log(x, y, '选择棋子的坐标');
+                let lineArr = list.map((item, index) => { // 未筛选的所有可移动的坐标
+                    return index === +y ? item : item[x]
+                })
+                let resultArr = this.filterLine(lineArr, x, y, num) // 将路径上有棋子的坐标筛选出来
+                this.showWays(resultArr, 1, num)
+                return resultArr
+            }
+            filterLine(arr, x, y, num) { // 筛选移动路径上的棋子
+                let yArr1 = arr.slice(0, y)
+                let yArr2 = arr.slice(y + 1, arr.length)
+                let xArr1 = arr[y].slice(0, x)
+                let xArr2 = arr[y].slice(x + 1, arr[y].length)
+                console.log({ yArr1, yArr2, xArr1, xArr2 });
+                return [
+                    ...this.loopMethod(xArr1, -1, this.num),
+                    ...this.loopMethod(xArr2, 1, this.num),
+                    ...this.loopMethod(yArr1, -1, this.num),
+                    ...this.loopMethod(yArr2, 1, this.num),
+                ]
+            }
+        }
+        class Zu extends Qi { // 卒
+            constructor(index, index2, item2, tr, name, type) {
+                super(index, index2, item2, tr, name, type)
+            }
+            getLine(x, y, num) { // 获取卒可以移动到的所有坐标
+                console.log(x, y, '选择棋子的坐标');
+                let lineArr = [] // 未筛选的所有可移动的坐标
+                if (this.type == 1 && y < 5 || this.type == 2 && y > 4) { // 过河前的移动路径
+                    this.type == 1 ? lineArr.push(list[y + 1]?.[x]) : lineArr.push(list[y - 1]?.[x])
+                } else { // 过河后的移动路径
+                    if (this.type == 1) {
+                        lineArr.push([list[y + 1]?.[x], list[y][x + 1], list[y][x - 1]])
+                    } else {
+                        lineArr.push([list[y - 1]?.[x], list[y][x + 1], list[y][x - 1]])
+                    }
+                }
+                let resultArr = this.filterLine(lineArr, x, y, num) // 将路径上有棋子的坐标筛选出来
+                this.showWays(resultArr, 1, num)
+                return resultArr
+            }
+        }
+        //封装渲染函数
+        const render = () => {
+            document.querySelector('table').innerHTML = ''
+            list.forEach((item, index) => {
+                let tr = document.createElement('tr')
+                item.forEach((item2, index2) => {
+                    let num = list[index][index2].num
+                    list[index][index2] = menu[num](index, index2, item2.num, tr, item2.type) // 枚举生成对应的棋子对象
+                })
+                document.querySelector('table').appendChild(tr)
+            })
+        }
+        render()
+        let flag = 0 // 0:未选中棋子；1:选中棋子
+        let sequence = false // true:黑棋走；false:红棋走
+        let ele, x, y
+        function clear() { // 清空数据
+            flag = 0
+            x = null
+            y = null
+        }
+        document.querySelector('table').addEventListener('click', e => { // 棋子的点击事件
+            if (x == e.target.dataset.x && y == e.target.dataset.y) { // 两次点击的地方一样，就放下棋子
+                clear() // 清空数据
+                ele.down() // 放下棋子
+                return
+            }
+            x = e.target.dataset.x || x
+            y = e.target.dataset.y || y
+            if (list[y][x].num && !flag) { // 选中要移动的棋子
+                ele = list[y][x]
+                console.log(ele, '选择的棋子');
+                flag = 1
+                ele.checked() // 选中触发的方法
+            } else if (flag) { // 移动棋子
+                ele.move(x, y)
+                clear() // 清空数据
+            } else {
+                console.log('此处没有棋子');
+                clear() // 清空数据
+            }
+        })
+    </script>
+</body>
+
+</html>
